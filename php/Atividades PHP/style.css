@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-family: "Reddit Sans Condensed", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; 
+    
+}
+
+.formulario{
+    width: 300px;
+    background-color: blueviolet;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+input {
+    padding: 5px;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(91, 172, 10);
+}

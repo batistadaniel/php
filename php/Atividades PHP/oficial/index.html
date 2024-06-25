@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário HTML</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-weight: 600;
+            font-family: "Reddit Sans Condensed", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .formulario {
+            width: 300px;
+            background-color: blueviolet;
+            padding: 30px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        input, select {
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50; /* cor verde */
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049; /* cor mais escura de verde */
+        }
+
+        input[type=submit]:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(81, 203, 238, 0.5); /* exemplo de sombra ao focar */
+        }
+
+        .resultado {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .resultado p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form id="formulario" class="formulario">
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome">
+
+            <label for="usuario">Usuário:</label>
+            <input type="text" id="usuario">
+
+            <label for="email">E-mail:</label>
+            <input type="text" id="email">
+
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf">
+
+            <label for="nascimento">Data de Nascimento:</label>
+            <input type="date" id="nascimento">
+
+            <label for="sexo">Sexo:</label>
+            <select id="sexo">
+                <option value="selecione">Selecione o sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco">
+
+            <input type="button" value="Enviar" onclick="mostrarDados()">
+        </form>
+
+        <div id="resultado" class="resultado formulario" style="display: none;">
+            <p><strong>Nome:</strong> <span id="mostrarNome"></span></p>
+            <p><strong>Usuário:</strong> <span id="mostrarUsuario"></span></p>
+            <p><strong>E-mail:</strong> <span id="mostrarEmail"></span></p>
+            <p><strong>CPF:</strong> <span id="mostrarCPF"></span></p>
+            <p><strong>Data de Nascimento:</strong> <span id="mostrarNascimento"></span></p>
+            <p><strong>Sexo:</strong> <span id="mostrarSexo"></span></p>
+            <p><strong>Endereço:</strong> <span id="mostrarEndereco"></span></p>
+        </div>
+    </main>
+
+    <script>
+        function mostrarDados() {
+            var nome = document.getElementById("nome").value;
+            var usuario = document.getElementById("usuario").value;
+            var email = document.getElementById("email").value;
+            var cpf = document.getElementById("cpf").value;
+            var nascimento = document.getElementById("nascimento").value;
+            var sexo = document.getElementById("sexo").value;
+            var endereco = document.getElementById("endereco").value;
+
+            document.getElementById("mostrarNome").textContent = nome;
+            document.getElementById("mostrarUsuario").textContent = usuario;
+            document.getElementById("mostrarEmail").textContent = email;
+            document.getElementById("mostrarCPF").textContent = cpf;
+            document.getElementById("mostrarNascimento").textContent = nascimento;
+            document.getElementById("mostrarSexo").textContent = sexo;
+            document.getElementById("mostrarEndereco").textContent = endereco;
+
+            document.getElementById("resultado").style.display = "block";
+        }
+    </script>
+</body>
+</html>
